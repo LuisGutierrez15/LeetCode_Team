@@ -47,9 +47,4 @@ public class Problem1 {
 
         return bestProfit;
     }
-
-    public static void main(String[] args) {
-        System.out.println("Hola mundo");
-    }
-
 }
