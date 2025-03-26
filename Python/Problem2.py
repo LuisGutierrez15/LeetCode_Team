@@ -7,16 +7,20 @@ class Problem2:
         initial_length: int = len(nums)
         missing: int = 1
         i: int = 0
-        while missing < n:
-            if nums[i] <= missing:
-                missing += nums[i]
-            else:
-                nums.append(missing)
-                nums.sort()
-                missing += missing
-                print("When added ", nums)
 
-            i += 1
+        while missing <= n:
+            try:
+                if nums[i] <= missing:
+                    missing += nums[i]
+                else:
+                    nums.append(missing)
+                    nums.sort()
+                    missing += missing
+                    print("When added ", nums)
+
+                i += 1
+            except:
+                nums.append(n)
 
         print("Final ", nums)
 
