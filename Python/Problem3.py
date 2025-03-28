@@ -1,6 +1,6 @@
 class Problem3:
     def shortestPalindrome(self, s: str) -> str:
-        if s.isspace() or s == "":
+        if s.isspace() or s == "" or len(s) == 1:
             return s
         s_mirror: str = s[::-1]
 
