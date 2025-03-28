@@ -2,7 +2,7 @@ package Java;
 
 import java.lang.Math;
 
-public class Problem3 {
+public class Problem4 {
 
     public String shortestPalindrome(String s) {
         if (s.isEmpty()) {

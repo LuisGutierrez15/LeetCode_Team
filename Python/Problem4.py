@@ -1,4 +1,4 @@
-class Problem3:
+class Problem4:
     def shortestPalindrome(self, s: str) -> str:
         if s.isspace() or s == "" or len(s) == 1:
             return s
@@ -23,7 +23,7 @@ class Problem3:
 test: str = "abbacd"
 expected: str = "dcabbacd"
 
-p3: Problem3 = Problem3()
+p4: Problem4 = Problem4()
 
 
-print(p3.shortestPalindrome(test))
+print(p4.shortestPalindrome(test))
