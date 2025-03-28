@@ -1,40 +1,29 @@
-import time
-
-
 class Problem3:
     def shortestPalindrome(self, s: str) -> str:
         if s.isspace() or s == "":
             return s
-        # Quick thinking
-        # the length of the result string is always odd
-
-        # Correction, is not always odd
-
-        # Step 1: mirror the word
         s_mirror: str = s[::-1]
-        # Step 2: add a letter from original s until the total length is odd and half of s is equal to the other half
 
-        i: int = 0
-        trying: int = 1
+        step: int = 0
 
-        while (
-            s_mirror[: len(s_mirror) // 2 + 1][::-1] != s_mirror[len(s_mirror) // 2 :]
-        ):
-            try:
-                s_mirror += s[i]
-                i += 1
-            except:
-                s_mirror = s[::-1]
-                i = trying
-                trying += 1
+        while True:
+            test: str = s
+            temp = s_mirror[:step]
+            test = temp + test
 
-        print(s_mirror[: len(s_mirror) // 2])
-        print(s_mirror[len(s_mirror) // 2 :])
-        return s_mirror
+            is_odd: bool = len(test) % 2 == 1
+            plus: int = 1 if is_odd else 0
+
+            if test[: len(test) // 2 + plus][::-1] == test[len(test) // 2 :]:
+                return test
+
+            step += 1
 
 
 test: str = "abbacd"
 expected: str = "dcabbacd"
 
 p3: Problem3 = Problem3()
+
+
 print(p3.shortestPalindrome(test))
